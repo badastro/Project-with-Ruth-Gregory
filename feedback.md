@@ -7,6 +7,12 @@ Thanks, Danny
 
 ------
 
+## Homework assignment 3
+
+Feedback: Ruth and Dave, I'm glad to see that you feel the contributions on this work are equal and complementary. I am getting the sense that things are progressing, but I didn't see any graphic or background work in your repository besides that information that you have gotten the software installed. It will be quite prudent to make sure that you have some sample calculations and results this week, which is why the homework is minimized this week. Please take care to make sure that you do this work quickly adn thoroughly as it will be helpful to me to be able to see your progress and offer guidance and helpful to you to get the feedback.
+
+* Score: 16/20
+
 ## Homework assignment 2
 
 Feedback: Ruth and Dave, I think I have a really good idea of how you will split up the work, which is important that you both agreed on how that will look. I think I'm still a bit unclear of the objective of the project (i.e., what you will model, what scale of problem you are intending to solve, etc.). The general statements about using the module to model particles doesn't let me know what you are limiting yourself to do or including in the model. Let me suggest that you start with some of the simplest models that you can explain easily (i.e., does the module let you model the motion of chsrges in constant electric and magnetic fields?) and can you then make these models more complex? I think that might hepl me understand what level you are aiming for in the end.
