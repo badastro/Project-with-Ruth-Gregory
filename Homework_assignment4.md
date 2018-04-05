@@ -2,7 +2,9 @@ This week we looked at an example simulation of a FODO lattice written by David 
 
 We read this script and tried to understand all the commands. Then we thought we would try to edit this code to simulate the FODO lattices in a different particle accelerator: the Large Hadron Collider (LHC). This collider was chosen because it is easy to find the parameters for this accelerator, (i.e. just do a Google search for "LHC design parameters" and you find the information you need). We have attempted to do this edited simulation in the file LHC.py, which has also been uploaded to this repository.
 
-![FODO3d_envelope](FODO3d_envelope.png) ![LHC_envelope](LHC_envelope.png)
+The results of these two scripts are shown below. The odd numbered images are the ones produced by the example FODO3d.py, and the even number images are the ones produced by LHC.py. We are still trying to figure out how to get our simulation to work properly like the example.
+
+![FODO3d_envelope](FODO3d_envelope.png) ![LHC_envelope](LHC_envelope.png ==200x)
 
 ![FODO3d_params](FODO3d_params.png) ![LHC_params](LHC_params.png)
 
