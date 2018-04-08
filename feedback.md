@@ -7,6 +7,12 @@ Thanks, Danny
 
 ------
 
+## Homework assignment 4
+
+Feedback: Ruth and Dave, I'm happy to see you've gotten the code working. Because you are modifying existing code, I will have a much hgiher demand on you being able to explain what the code is doing and how you know that. Additionally, you will need to be able to explain all the plots that it appears to produce. It's fine to use an exisiting package like you are, but you will need to make sure that you understand how everything works and be able to explain it. I would say you should spend the week making sure that you can do that. Great job getting things working.
+
+* Score: 20/20
+
 ## Homework assignment 3
 
 Feedback: Ruth and Dave, I'm glad to see that you feel the contributions on this work are equal and complementary. I am getting the sense that things are progressing, but I didn't see any graphic or background work in your repository besides that information that you have gotten the software installed. It will be quite prudent to make sure that you have some sample calculations and results this week, which is why the homework is minimized this week. Please take care to make sure that you do this work quickly adn thoroughly as it will be helpful to me to be able to see your progress and offer guidance and helpful to you to get the feedback.
