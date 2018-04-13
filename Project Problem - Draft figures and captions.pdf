@@ -1,1 +1,3 @@
+This week we started making the poster. We added an introduction and some pictures. We also went through the file FODO3d.py and went through each line of code to try to understand what it does, and write our own comments. These comments can be found in the file FODO_RD_comments.py.
 
+We also added a description for some of the figures produced by FODO3d.py, which are in the file FODO3d_image_descriptions.md. In some of the plots (the ones with four plots on one page), the vertical axis title was overlaping with the tick mark labels, and some of the text at the bottom was overlapping. We have fixed this so that if we want to put these kinds of plots in our poster they will look good.
