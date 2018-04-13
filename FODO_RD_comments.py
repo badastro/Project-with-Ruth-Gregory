@@ -196,7 +196,10 @@ def runtimeplots(nsteps=steps_p_perd):
     "Make user defined plots, every steps_p_perd steps"
     if top.it%nsteps != 0:
         return
-    # --- Create overlaid plots in subframes of the plot window.
+
+    #Make phase space plots of the spatial locations of 20,000 particles in the
+    #x axis vs z axis (top) and the y axis vs z axis (bottom)
+    #all on one plot window
     plsys(9)
     pfzx(cellarray=1, contours=0, centering='cell')
     pzxedges(color=red, titles=False)
@@ -205,21 +208,28 @@ def runtimeplots(nsteps=steps_p_perd):
     pzyedges(color=red, titles=False)
     fma()
 
-    # --- Make plots of the transverse distribution in two zwindows.
+    #Make plots of the transverse distributions
+    #each in their own plot window
+
+    #make a phase space plot of the particles x position vs their y position
+    plsys(1) #position plot in the middle of the window
+    ppxy(iw=1) #make the plot
+    limits(-0.02, +0.02, -0.02, +0.02) #set the limits
+    fma() #new plot window
     plsys(1)
-    ppxy(centering='cell')
-    limits(-0.02, +0.02, -0.02, +0.02)
-    fma()
-    plsys(1)
-    ppxxp(centering='cell')
+
+    #make a plot of x vs x' particle position
+    ppxxp(iw=1)
     limits(-0.02, +0.02, -0.04, +0.04)
     fma()
+
+    #make a plot of 
     plsys(1)
-    ppxy(centering='cell')
+    ppxy(iw=3)
     limits(-0.02, +0.02, -0.02, +0.02)
     fma()
     plsys(1)
-    ppxxp(centering='cell')
+    ppxxp(iw=3)
     limits(-0.02, +0.02, -0.04, +0.04)
     fma()
 
