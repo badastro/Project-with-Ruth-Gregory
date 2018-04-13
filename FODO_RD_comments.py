@@ -193,17 +193,17 @@ top.ipzvz[-2] = always #call ipzvs as specified by zzplalways
 #gets called after every time step
 @callfromafterstep
 def runtimeplots(nsteps=steps_p_perd):
-    "Make user defined plots, every steps_p_perd steps"
+    "Make some plots every steps_p_perd steps"
     if top.it%nsteps != 0:
         return
 
     #Make phase space plots of the spatial locations of 20,000 particles in the
     #x axis vs z axis (top) and the y axis vs z axis (bottom)
     #all on one plot window
-    plsys(9)
-    pfzx(cellarray=1, contours=0, centering='cell')
+    plsys(9) #position the plot at the top of the window
+    pfzx(cellarray=1, contours=0, centering='cell') #make plot
     pzxedges(color=red, titles=False)
-    plsys(10)
+    plsys(10) #position plot at the bottom of the window
     pfzy(cellarray=1, contours=0, centering='cell')
     pzyedges(color=red, titles=False)
     fma()
@@ -223,39 +223,48 @@ def runtimeplots(nsteps=steps_p_perd):
     limits(-0.02, +0.02, -0.04, +0.04)
     fma()
 
-    #make a plot of 
+    #make another phase space plot of the particles x position vs their y position
     plsys(1)
     ppxy(iw=3)
     limits(-0.02, +0.02, -0.02, +0.02)
     fma()
+
+    #make another plot of x vs x' particle position
     plsys(1)
     ppxxp(iw=3)
     limits(-0.02, +0.02, -0.04, +0.04)
     fma()
 
-# --- Switch to the w3d package, which runs the 3D PIC model.
-# --- The generate command does the initialization, including creating
-# --- the particles, doing the initial Poisson solve, and calculating
-# --- initial diagnostics and moments.
+#use the w3d package so that you can run the 3D PIC model
 package("w3d")
+
+#generate the particles, calculate the initial diagnostics and moments,
+#also do the initial Poisson solving
 generate()
 
-# --- Directly call the user defined function, producing plots of the initial conditions.
+#call the runtimeplots funtion
 runtimeplots()
 
-# --- Run for 50 time steps.
-# --- Note that after each time step, the routine runtimeplots will be automatically called.
+#run the code 50 times
 step(50)
 
-# --- Make various post processing diagnostic plots.
+#Make some diagnostic plots at the end of the simulation
+
+#set the plot titles
 ptitles('Beam X envelope history, in beam frame', 'Lattice periods', 'Beam frame location (m)', 'Envelope is 2*Xrms')
+
+#plot 2 times the X rms values vs space and time using the history arrays generated earlier
+#I think this is plotting the rms of the x position of the beam for one lattice period
 ppgeneric(gridt=2.*top.hxrmsz[:,:top.jhist,0], xmin=0., xmax=top.zbeam/(2.*hlp), ymin=w3d.zmmin, ymax=w3d.zmmax)
 fma()
 
 ptitles('Beam X normalized emittance history, in beam frame', 'Lattice periods', 'Beam frame location (m)')
+
+#plot the normalized x-direction emittance vs space and time for one lattice period
 ppgeneric(gridt=top.hepsnxz[:,:top.jhist,0], xmin=0., xmax=top.zbeam/(2.*hlp), ymin=w3d.zmmin, ymax=w3d.zmmax)
 fma()
 
+#Plot the normalized emittance in the x direction over time
 hpepsnx()
 hpepsny(titles=0)
 fma()
