@@ -7,6 +7,12 @@ Thanks, Danny
 
 ------
 
+## Homework assignment 5
+
+Feedback: Ruth and Dave, thanks for doing exactly what I asked of you. I think you have everything you need here for a poster (in fact, you might have too many figures!). You will need to think about how to conceptually lay out your poster so that folks understand the system, then what the model is doing, and then the results (i.e., the figures). I suspect this will take some thinking on your part this week as you have a lot to work with. I don't think you need code in the poster, but you can talk through pseudocode or even just explain what he code does in a step-by-step manner. In any event, I'd suggest that you try to make a mock poster up and choose the feedback that you need to make it better. Great job this week!
+
+* Score: 20/20
+
 ## Homework assignment 4
 
 Feedback: Ruth and Dave, I'm happy to see you've gotten the code working. Because you are modifying existing code, I will have a much hgiher demand on you being able to explain what the code is doing and how you know that. Additionally, you will need to be able to explain all the plots that it appears to produce. It's fine to use an exisiting package like you are, but you will need to make sure that you understand how everything works and be able to explain it. I would say you should spend the week making sure that you can do that. Great job getting things working.
