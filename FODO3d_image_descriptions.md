@@ -42,7 +42,7 @@ Description: This is the same as the same as the previous plot in this document 
 
 <img src="images/yvx_s0.png" data-canonical-src="images/FODO3d_cigar2.png" width="480" height="480" />
 
-Description: This is a plot of the particle position in the y direction vs the particle position in the x direction in their initial conditions.
+Description: Plot of the particle position in the y direction vs the particle position in the x direction in their initial conditions.
 
 *Include in poster if there is enough room*
 
@@ -54,13 +54,13 @@ Description: This is the same as the previous plot after the program has run for
 
 <img src="images/FODO3d_env.png" data-canonical-src="images/FODO3d_env.png" width="480" height="480" />
 
-Description: This is a plot 2 times the X rms values vs space and time. I think this is plotting the rms of the x position of the beam for one lattice period
+Description: Plot of 2 times the X rms values vs space and time. This is plotting the rms of the x position of the beam for one lattice period
 
 *Include in poster if there is enough room*
 
 <img src="images/FODO3d_ne.png" data-canonical-src="images/FODO3d_ne.png" width="480" height="480" />
 
-Description: This is a plot of the normalized emittance in the x direction vs space and time for one lattice period.
+Description: Plot of the normalized emittance in the x direction vs space and time for one lattice period.
 
 *Include in poster*
 
