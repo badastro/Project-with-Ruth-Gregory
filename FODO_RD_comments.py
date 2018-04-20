@@ -2,7 +2,7 @@
 from warp import *
 
 #To make or not to make movies of 3D plots right now
-l_movieplot = False
+l_movieplot = True
 l_movieplot3d = False
 
 #Set descriptions for the plots
@@ -151,10 +151,6 @@ top.fstype = 0
 #the rest of the quadrants, but in this case we don't want that
 w3d.l4symtry = false
 
-# --- Setup various diagnostics and plots.
-# --- By default, Warp calculates all 1st and 2nd order moments of the particles
-# --- as a function of z position.
-
 
 #zwindows specifies the locations where histories of the momnets are saved by
 #warp. In this case, the momnents at the center of the window are saved.
@@ -222,18 +218,7 @@ def runtimeplots(nsteps=steps_p_perd):
     ppxxp(iw=1)
     limits(-0.02, +0.02, -0.04, +0.04)
     fma()
-
-    #make another phase space plot of the particles x position vs their y position
-    plsys(1)
-    ppxy(iw=3)
-    limits(-0.02, +0.02, -0.02, +0.02)
-    fma()
-
-    #make another plot of x vs x' particle position
-    plsys(1)
-    ppxxp(iw=3)
-    limits(-0.02, +0.02, -0.04, +0.04)
-    fma()
+    
 
 #use the w3d package so that you can run the 3D PIC model
 package("w3d")
@@ -244,6 +229,55 @@ generate()
 
 #call the runtimeplots funtion
 runtimeplots()
+
+#Make a movie plot is desired
+if l_movieplot:
+    window(1,hcp='movie.cgm',dump=1)
+    @callfromafterstep
+    def movieplot():
+        window(1)
+        pfzx(view=9,titles=0,filled=0)
+        pfzy(view=10,titles=0,filled=0)
+        ppzxy(color=black)
+        limits()
+        fma();
+        window(0)
+
+if l_movieplot3d:
+    try:
+        from Opyndx import *
+        iframe = 0
+        os.system('rm -fr movie3d')
+        os.system('mkdir movie3d')
+        @callfromafterstep
+        def movieplot3d():
+            global iframe
+            if top.it%3!=0:return
+            pp,clm=viewparticles(getx()[::10],
+                                 gety()[::10],
+                                 getz()[::10]-ave(getz()),
+                                 getr()[::10]*100,
+                                 size=3.e-4,
+                                 ratio=1.,
+                                 color='auto',
+                                 display=0,
+                                 opacity=1.,
+                                 cmin=0.,cmax=1.7)
+            c = DXCamera(lookto=[0.,0.,0.],lookfrom=[0.00025484, 0.201298, -0.163537],width=100., \
+                         resolution=640,aspect=0.75,up=[0.873401, 0.333893, 0.354521],perspective=1,angle=30., \
+                         background='black')
+            #DXImage(pp[0],scale=[1.,1.,0.1],camera=c)
+            cc=[pp]
+            cc.append(DXColorBar(clm,labelscale=1.,label='Radius [cm]',position=[0.01,0.95],min=0.,max=1.7))
+            ccc = DXCollect(cc)
+
+            im = DXScale(ccc,[1.,1.,0.1])
+
+            DXWriteImage('movie3d/img%g'%(iframe+10000),im,c,format='tiff')
+            iframe+=1
+    except:
+        pass
+
 
 #run the code 50 times
 step(50)
@@ -268,3 +302,13 @@ fma()
 hpepsnx()
 hpepsny(titles=0)
 fma()
+
+if l_movieplot:
+    os.system("python cgmtomp4 movie.cgm 50")
+
+if l_movieplot3d and iframe>0:
+    step(150)
+    os.system('cd movie3d;ffmpeg -y -r 12 -i img1%04d.tiff -strict -1 -qscale 1.0 -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" FODO3D.mp4;mv FODO3D.mp4 ../.')
+#    os.system('')
+#    os.system('')
+#    os.system('cd ..')
