@@ -7,6 +7,12 @@ Thanks, Danny
 
 ------
 
+## Homework assignment 6
+
+Feedback: Ruth and Dave, first the figures. I think you have chosen some of the essential figures to illustrate what you are doing, but I tihnk more important than presenting any one of them is thinking about how to present them as a story of what you are modeling. That is, how do you get from one to the next. For some it's easy, this is just a later evolution of them same thing and see how it's changed. For others you will need to think hard about how the figures are connected together so that they tell a complete story about how the particle motion connects to the beam. So that being said, the poster layout is fine, but green text on a green background is really hard to read and probably won't print nicely. The white really pops, so maybe that or a light grey if you don't want to use the same color as the title. The layout is fine, but the content will also need to be thought through. The thing you shouldn't do is say, oh we did this project and used FODO the end. You want to help me and your classmates understand what you are trying to model and what FODO does to make that happen. That's why you worked on explaining the code to me. So, spend some space the "models" section to talk about what FODO is doing and how it is modeling what you want. Finally, for references, enumerate them and make sure they are linked to some part of the text. That is, "We used FODO [1]" where [1] is then cited. Good work on this!
+
+* Score: 20/20
+
 ## Homework assignment 5
 
 Feedback: Ruth and Dave, thanks for doing exactly what I asked of you. I think you have everything you need here for a poster (in fact, you might have too many figures!). You will need to think about how to conceptually lay out your poster so that folks understand the system, then what the model is doing, and then the results (i.e., the figures). I suspect this will take some thinking on your part this week as you have a lot to work with. I don't think you need code in the poster, but you can talk through pseudocode or even just explain what he code does in a step-by-step manner. In any event, I'd suggest that you try to make a mock poster up and choose the feedback that you need to make it better. Great job this week!
